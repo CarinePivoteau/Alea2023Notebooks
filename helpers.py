@@ -26,7 +26,7 @@ def gen_random_fixed_size(gen, x, n):
         nb_trials += 1
         size_trials += s
         if s == n:
-            return nb_trials,size_trials,t
+            return nb_trials, size_trials, t
 
 # renvoie un gen. en taille approchée en utlisant le générateur libre gen
 def gen_random_approx_size(gen, x, mini, maxi):
@@ -34,12 +34,12 @@ def gen_random_approx_size(gen, x, mini, maxi):
     while True :
         t,s = gen(x, maxi)
         nb_trials += 1
-        if nb_trials % 100 == 0 :
-            print(".", end = "")
         size_trials += s
         if mini <= s <= maxi:
             print()
-            return nb_trials,size_trials,t,s
+            return nb_trials, size_trials, t, s
+
+        if nb_trials % 100 == 0 : print(".", end = "")
 
 ###############################################################################
 ###############################################################################
